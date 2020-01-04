@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userTookScreenshot:) name:UIApplicationUserDidTakeScreenshotNotification object:nil];
+
+}
+
+- (void)userTookScreenshot:(NSNotification *)notification {
+    NSLog(@"スクリーンショットが撮影されました。");
 }
 
 
